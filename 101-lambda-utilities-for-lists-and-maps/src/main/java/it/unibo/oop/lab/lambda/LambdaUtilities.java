@@ -61,7 +61,12 @@ public final class LambdaUtilities {
         /*
          * Suggestion: consider Optional.filter
          */
-        return null;
+        final List<Optional<T>> l = new ArrayList<>(list.size());
+        list.forEach(t -> {
+            final Optional<T> elem = Optional.of(t);
+            l.add(elem.filter(pre));
+        });
+        return l;
     }
 
     /**
@@ -80,7 +85,7 @@ public final class LambdaUtilities {
         /*
          * Suggestion: consider Map.merge
          */
-        return null;
+        return null; //NOPMD: will be changed
     }
 
     /**
@@ -101,7 +106,7 @@ public final class LambdaUtilities {
          *
          * Keep in mind that a map can be iterated through its forEach method
          */
-        return null;
+        return null; //NOPMD: will be changed
     }
 
     /**
